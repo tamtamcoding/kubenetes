@@ -20,6 +20,7 @@ jobs:
       run:
         kubectl apply -f deploy/k8s.yaml
         kubectl wait --for=condition=ready pod -l app=local-devex
+
     - name: Test service URLs
       run: |
         minikube service list
